@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101624">
+<meta name="description" content="ThinkRoot helps students discover the misconception behind a maths mistake and practise the exact concept.">
+<title>ThinkRoot — Find the root of the mistake</title>
+<style>
+:root{--bg:#0b1020;--panel:#131b2d;--panel2:#182238;--text:#f4f7fb;--muted:#a6b2c8;--line:#29354c;--accent:#83e1c1;--accent2:#b5a3ff;--danger:#ff9eab;--good:#8fe3ae;--radius:18px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#1b2d45 0%,var(--bg) 48%);color:var(--text);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}
+button,input{font:inherit}button{cursor:pointer}.wrap{max-width:1100px;margin:auto;padding:24px}.nav{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:38px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.2rem;letter-spacing:-.03em}.logo{width:40px;height:40px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#0a1220;font-weight:900}.tag{font-size:.78rem;border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:var(--muted)}
+.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:22px;align-items:stretch}.panel{background:linear-gradient(150deg,rgba(24,34,56,.96),rgba(17,25,42,.96));border:1px solid var(--line);border-radius:var(--radius);padding:25px;box-shadow:0 14px 45px #0002}.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800}.hero h1{font-size:clamp(2.4rem,5vw,4.4rem);line-height:1.02;letter-spacing:-.06em;margin:13px 0 18px}.hero h1 span{color:var(--accent)}p{color:var(--muted);margin-top:0}.hero p{max-width:620px;font-size:1.05rem}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.btn{border:1px solid transparent;border-radius:12px;padding:12px 16px;font-weight:750;transition:.15s}.btn.primary{background:var(--accent);color:#08151b}.btn.secondary{background:var(--panel2);border-color:var(--line);color:var(--text)}.btn:hover{transform:translateY(-1px);filter:brightness(1.05)}.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.metric{padding:17px;background:#0b1220aa;border:1px solid var(--line);border-radius:14px}.metric strong{display:block;font-size:1.7rem;color:var(--accent)}.metric small{color:var(--muted)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:14px;margin:34px 0 15px}.section-head h2{margin:0;font-size:1.5rem;letter-spacing:-.03em}.section-head p{margin:4px 0 0;font-size:.9rem}.layout{display:grid;grid-template-columns:1fr 310px;gap:18px}.question-card h3{margin:0 0 6px;font-size:1.25rem}.subtle{color:var(--muted);font-size:.9rem}.options{display:grid;gap:10px;margin:18px 0}.option{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--line);border-radius:13px;padding:13px;background:#0d1525;color:var(--text);text-align:left;width:100%}.option:hover{border-color:#698c9b}.option.selected{border-color:var(--accent);background:#17302f}.option input{margin-top:5px;accent-color:#83e1c1}.row{display:flex;justify-content:space-between;align-items:center;gap:12px}.progress{height:7px;border-radius:99px;background:#29354c;overflow:hidden;margin:14px 0 20px}.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .25s}.side h3{margin-top:0}.side ul{padding-left:19px;color:var(--muted)}.side li{margin:8px 0}.hidden{display:none!important}.result{margin-top:18px;border:1px solid #4a6b67;background:#122b2a;border-radius:14px;padding:18px}.result h3{margin:5px 0 8px}.result .label{color:var(--accent);font-weight:800;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em}.pill{display:inline-block;padding:4px 9px;border-radius:99px;background:#24354a;color:#d9e4f4;font-size:.78rem}.history-item{border-bottom:1px solid var(--line);padding:13px 0}.history-item:last-child{border:0}.history-item strong{display:block}.footer{padding:30px 0 10px;color:var(--muted);font-size:.82rem;text-align:center}.notice{font-size:.82rem;color:var(--muted);border-left:3px solid var(--accent2);padding:9px 12px;background:#151c30;border-radius:0 8px 8px 0}
+@media(max-width:800px){.hero,.layout{grid-template-columns:1fr}.hero h1{font-size:3rem}.wrap{padding:16px}.panel{padding:19px}.side{order:2}.nav{margin-bottom:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="nav">
+  <div class="brand"><div class="logo">T</div><span>ThinkRoot</span></div>
+  <span class="tag">AI learning diagnostics · Maths MVP</span>
+</header>
+<main>
+<section class="hero">
+  <div class="panel">
+    <div class="eyebrow">Learn the why, not just the answer</div>
+    <h1>Find the <span>root</span> of the mistake.</h1>
+    <p>ThinkRoot helps you identify a likely maths misconception, understand the concept, and practise the exact skill that needs work.</p>
+    <div class="actions"><button class="btn primary" id="startBtn">Start diagnostic →</button><button class="btn secondary" id="historyBtn">View my progress</button></div>
+  </div>
+  <div class="panel">
+    <div class="eyebrow">Your learning loop</div>
+    <div class="metric-grid" style="margin-top:16px">
+      <div class="metric"><strong>01</strong><small>Answer a question</small></div>
+      <div class="metric"><strong>02</strong><small>Detect the pattern</small></div>
+      <div class="metric"><strong>03</strong><small>Targeted practice</small></div>
+      <div class="metric"><strong>04</strong><small>Check improvement</small></div>
+    </div>
+  </div>
+</section>
+<section id="diagnosticSection">
+  <div class="section-head"><div><h2>Maths diagnostic</h2><p>Answer honestly. If you're unsure, choose the closest answer.</p></div><span id="counter" class="pill">Ready when you are</span></div>
+  <div class="layout">
+    <div class="panel question-card">
+      <div id="introState">
+        <h3>Start with a short diagnostic</h3>
+        <p class="subtle">This demo uses transparent, rule-based patterns for five common algebra misconceptions. It is a learning aid, not a formal assessment.</p>
+        <div class="notice">Tip: select the answer you would naturally give. The system uses your response pattern to suggest what to practise next.</div>
+        <div class="actions"><button class="btn primary" id="beginBtn">Begin 5 questions</button></div>
+      </div>
+      <div id="quizState" class="hidden">
+        <div class="row"><span id="topic" class="pill">Algebra</span><span id="qNum" class="subtle">Question 1 of 5</span></div>
+        <div class="progress"><div id="progressBar"></div></div>
+        <h3 id="questionText"></h3>
+        <p id="questionHelp" class="subtle"></p>
+        <div id="options" class="options"></div>
+        <div class="row"><button class="btn secondary" id="backBtn">Back</button><button class="btn primary" id="nextBtn" disabled>Next →</button></div>
+      </div>
+      <div id="resultState" class="hidden">
+        <span class="pill">Diagnostic result</span>
+        <div class="result">
+          <div class="label">Likely area to practise</div>
+          <h3 id="diagnosisTitle"></h3>
+          <p id="diagnosisBody"></p>
+          <strong>Why this was suggested</strong>
+          <p id="evidence"></p>
+        </div>
+        <h3 style="margin-top:22px">Targeted practice</h3>
+        <p id="practicePrompt"></p>
+        <div id="practiceOptions" class="options"></div>
+        <div id="practiceFeedback" class="notice hidden"></div>
+        <div class="actions"><button class="btn primary" id="saveResultBtn">Save result & finish</button><button class="btn secondary" id="retryBtn">Try another diagnostic</button></div>
+      </div>
+    </div>
+    <aside class="panel side">
+      <h3>What ThinkRoot checks</h3>
+      <ul>
+        <li>Sign and negative-number errors</li>
+        <li>Distributing multiplication</li>
+        <li>Balancing equations</li>
+        <li>Combining unlike terms</li>
+        <li>Interpreting fractions in equations</li>
+      </ul>
+      <div class="notice">Your demo progress is stored in this browser only. Sign-in and cloud sync are not enabled in this MVP.</div>
+    </aside>
+  </div>
+</section>
+<section id="progressSection" class="hidden">
+  <div class="section-head"><div><h2>Your progress</h2><p>Saved on this device in this browser.</p></div><button id="backToDiagnostic" class="btn secondary">Back to diagnostic</button></div>
+  <div class="panel">
+    <div class="metric-grid">
+      <div class="metric"><strong id="sessionsCount">0</strong><small>Sessions completed</small></div>
+      <div class="metric"><strong id="lastTopic">—</strong><small>Latest focus</small></div>
+    </div>
+    <h3 style="margin-top:24px">Session history</h3>
+    <div id="historyList"><p class="subtle">No sessions yet. Complete a diagnostic to begin tracking progress.</p></div>
+    <div class="actions"><button class="btn secondary" id="clearHistory">Clear local history</button></div>
+  </div>
+</section>
+</main>
+<footer class="footer">ThinkRoot · Hackathon MVP · Rule-based diagnostic demo. Diagnoses are suggestions, not definitive judgments.</footer>
+</div>
+<script>
+const questions = [
+ {id:"sign",topic:"Algebra · Negative signs",q:"Simplify: 5 − (−3)",help:"Choose the result you think is correct.",opts:[["8","8"],["2","2"],["−8","-8"],["I am not sure","unsure"]],correct:"8",mis:"Negative-sign confusion",practice:"What is −4 − (−2)?",pOpts:[["−6","-6"],["−2","-2"],["2","2"],["6","6"]],pCorrect:"-2",explain:"Subtracting a negative is equivalent to adding the positive: 5 − (−3) = 5 + 3 = 8.",why:"Your answer can indicate how you interpret subtracting a negative number."},
+ {id:"distribute",topic:"Algebra · Distributive property",q:"Expand: 3(x + 2)",help:"Apply multiplication to the expression inside the brackets.",opts:[["3x + 2","3x+2"],["3x + 6","3x+6"],["x + 6","x+6"],["3x + 5","3x+5"]],correct:"3x+6",mis:"Distributive-property error",practice:"Expand: 4(y + 3)",pOpts:[["4y + 3","4y+3"],["4y + 12","4y+12"],["y + 12","y+12"],["4y + 7","4y+7"]],pCorrect:"4y+12",explain:"Multiply 3 by both terms: 3 × x + 3 × 2 = 3x + 6.",why:"The selected answer can reveal whether the multiplier was applied to every term."},
+ {id:"balance",topic:"Algebra · Equation balance",q:"Solve: x + 7 = 12",help:"Choose the value of x.",opts:[["19","19"],["5","5"],["12","12"],["−5","-5"]],correct:"5",mis:"Equation-balance confusion",practice:"Solve: y + 4 = 10",pOpts:[["14","14"],["6","6"],["4","4"],["−6","-6"]],pCorrect:"6",explain:"Subtract 7 from both sides: x = 12 − 7 = 5. An equation stays balanced when the same operation is applied to both sides.",why:"A wrong answer may indicate confusion about undoing addition while preserving equality."},
+ {id:"terms",topic:"Algebra · Like terms",q:"Simplify: 2x + 3x",help:"Combine terms with the same variable and power.",opts:[["5x","5x"],["5x²","5x^2"],["6x","6x"],["5","5"]],correct:"5x",mis:"Combining like terms",practice:"Simplify: 4a + 2a",pOpts:[["6a","6a"],["6a²","6a^2"],["8a","8a"],["6","6"]],pCorrect:"6a",explain:"Add the coefficients: 2 + 3 = 5, while the variable x stays the same.",why:"A wrong answer may indicate confusion between adding coefficients and multiplying variables."},
+ {id:"fraction",topic:"Algebra · Fractions",q:"Solve: x / 3 = 4",help:"Which value makes the equation true?",opts:[["7","7"],["12","12"],["1","1"],["4/3","4/3"]],correct:"12",mis:"Inverse operations with division",practice:"Solve: y / 5 = 3",pOpts:[["8","8"],["15","15"],["2","2"],["3/5","3/5"]],pCorrect:"15",explain:"Multiply both sides by 3: x = 4 × 3 = 12.",why:"A wrong answer may indicate difficulty reversing division in an equation."}
+];
+let idx=0, answers={}, practiceChoice=null, currentResult=null;
+const $=id=>document.getElementById(id);
+function showSection(id){$("diagnosticSection").classList.toggle("hidden",id!=="diagnostic");$("progressSection").classList.toggle("hidden",id!=="progress");}
+function start(){idx=0;answers={};practiceChoice=null;currentResult=null;$("introState").classList.add("hidden");$("resultState").classList.add("hidden");$("quizState").classList.remove("hidden");renderQuestion();showSection("diagnostic");}
+function renderQuestion(){const q=questions[idx];$("topic").textContent=q.topic;$("qNum").textContent=`Question ${idx+1} of ${questions.length}`;$("counter").textContent=`${idx+1} / ${questions.length}`;$("questionText").textContent=q.q;$("questionHelp").textContent=q.help;$("progressBar").style.width=((idx+1)/questions.length*100)+"%";$("options").innerHTML="";q.opts.forEach(([label,value])=>{const b=document.createElement("button");b.className="option"+(answers[q.id]===value?" selected":"");b.innerHTML=`<input type="radio" name="answer" ${answers[q.id]===value?"checked":""} aria-label="${label}"><span>${label}</span>`;b.onclick=()=>{answers[q.id]=value;renderQuestion()};$("options").appendChild(b)});$("backBtn").disabled=idx===0;$("nextBtn").disabled===!answers[q.id];$("nextBtn").disabled=!answers[q.id];$("nextBtn").textContent=idx===questions.length-1?"Find my learning focus →":"Next →";}
+function diagnose(){let misses=[];questions.forEach(q=>{if(answers[q.id]!==q.correct&&answers[q.id]!=="unsure")misses.push(q)});let chosen;if(!misses.length){chosen={mis:"Strong performance on this set",explain:"You answered all five diagnostic questions correctly. Try a more challenging set next.",why:"All answers in this short sample matched the expected answers.",practice:"Solve: 2(x + 3) = 14. What is x?",pOpts:[["4","4"],["7","7"],["5","5"],["10","10"]],pCorrect:"4"};}else{chosen=misses[0];}currentResult={title:chosen.mis,body:chosen.explain,evidence:misses.length?`${misses.length} of ${questions.length} answers were incorrect or uncertain. This is a preliminary signal, not a definitive diagnosis. The first flagged topic is used to choose the practice question.`:"No errors were detected in this short set.",practice:chosen.practice,pOpts:chosen.pOpts,pCorrect:chosen.pCorrect,explain:chosen.explain,topic:chosen.topic||"Mixed algebra",misses:misses.map(q=>q.mis)};$("quizState").classList.add("hidden");$("resultState").classList.remove("hidden");$("counter").textContent="Review";$("diagnosisTitle").textContent=currentResult.title;$("diagnosisBody").textContent=currentResult.body;$("evidence").textContent=currentResult.evidence;$("practicePrompt").textContent=currentResult.practice;$("practiceFeedback").classList.add("hidden");$("practiceOptions").innerHTML="";practiceChoice=null;currentResult.pOpts.forEach(([label,value])=>{const b=document.createElement("button");b.className="option";b.innerHTML=`<input type="radio" name="practice" aria-label="${label}"><span>${label}</span>`;b.onclick=()=>{practiceChoice=value;[...$("practiceOptions").children].forEach(x=>x.classList.remove("selected"));b.classList.add("selected");const fb=$("practiceFeedback");fb.classList.remove("hidden");fb.textContent=value===currentResult.pCorrect?"Correct. "+currentResult.explain:"Not quite. Revisit the explanation, then try another practice question.";};$("practiceOptions").appendChild(b)});}
+function getHistory(){try{return JSON.parse(localStorage.getItem("thinkroot_history")||"[]")}catch{return []}}
+function save(){const h=getHistory();h.unshift({date:new Date().toLocaleString(),title:currentResult.title,correct:questions.filter(q=>answers[q.id]===q.correct).length,total:questions.length,practiceCorrect:practiceChoice===currentResult.pCorrect});localStorage.setItem("thinkroot_history",JSON.stringify(h.slice(0,50)));renderHistory();$("saveResultBtn").textContent="Saved ✓";$("saveResultBtn").disabled=true;}
+function renderHistory(){const h=getHistory();$("sessionsCount").textContent=h.length;$("lastTopic").textContent=h.length?h[0].title:"—";$("historyList").innerHTML=h.length?h.map(x=>`<div class="history-item"><strong>${escapeHtml(x.title)}</strong><span class="subtle">${escapeHtml(x.date)} · ${x.correct}/${x.total} diagnostic answers correct · Practice ${x.practiceCorrect?"correct":"not correct yet"}</span></div>`).join(""):'<p class="subtle">No sessions yet. Complete a diagnostic to begin tracking progress.</p>';}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+$("startBtn").onclick=()=>{document.getElementById("diagnosticSection").scrollIntoView({behavior:"smooth"});start()};
+$("beginBtn").onclick=start;
+$("nextBtn").onclick=()=>{if(idx<questions.length-1){idx++;renderQuestion()}else diagnose()};
+$("backBtn").onclick=()=>{if(idx>0){idx--;renderQuestion()}};
+$("saveResultBtn").onclick=save;
+$("retryBtn").onclick=()=>{start();$("saveResultBtn").disabled=false;$("saveResultBtn").textContent="Save result & finish"};
+$("historyBtn").onclick=()=>{showSection("progress");renderHistory();$("progressSection").scrollIntoView({behavior:"smooth"})};
+$("backToDiagnostic").onclick=()=>{showSection("diagnostic");$("diagnosticSection").scrollIntoView({behavior:"smooth"})};
+$("clearHistory").onclick=()=>{if(confirm("Clear saved ThinkRoot history on this browser?")){localStorage.removeItem("thinkroot_history");renderHistory()}};
+renderHistory();
+</script>
+</body>
+</html>
